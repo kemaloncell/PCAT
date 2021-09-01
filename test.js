@@ -40,6 +40,6 @@ const id = '612fbf334e161840b4e28b9c';
 //   }
 // );
 
-Photo.findByIdAndDelete(id,(err,data)=>{
-  console.log("photo is removed")
-})
+// Photo.findByIdAndDelete(id,(err,data)=>{
+//   console.log("photo is removed")
+// })

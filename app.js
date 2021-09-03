@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 //* Routes
 app.get('/', async (req, res) => {
   //res.sendFile(path.resolve(__dirname, 'temp/index.html')); zor yol :)
@@ -26,11 +27,20 @@ app.get('/', async (req, res) => {
     photos,
   });
 });
+app.get('/photos/:id', async (req, res) => {
+  const photo = await Photo.findById(req.params.id);
+  res.render('photo', {
+    photo,
+  });
+});
 app.get('/about', (req, res) => {
   res.render('about');
 });
 app.get('/add', (req, res) => {
   res.render('add');
+});
+app.get('/photo', (req, res) => {
+  res.render('photo');
 });
 app.post('/photos', async (req, res) => {
   await Photo.create(req.body); //will wait until the document is created in the database

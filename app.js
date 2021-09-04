@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const photoController = require('./controllers/PhotoControllers');
-const pageController = require('./controllers/pageController');
+const pageController = require('./controllers/PageController');
 
 const app = express();
 
